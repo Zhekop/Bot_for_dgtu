@@ -1,4 +1,0 @@
-pip install -U aiogram
- aiogram apscheduler asyncio
-python -m venv .venv
-gspread
