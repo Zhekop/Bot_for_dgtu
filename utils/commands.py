@@ -1,5 +1,5 @@
 from aiogram import Bot
-from aiogram.types import BotCommand, BotCommandScopeAllGroupChats
+from aiogram.types import BotCommand, BotCommandScopeDefault
 
 async def set_commands(bot:Bot):
     commands = [
@@ -11,13 +11,9 @@ async def set_commands(bot:Bot):
             command='/all',
             description='пингует всех'
         ),
-        # BotCommand(
-        #     command='/info',
-        #     description='инофрмация о сообщении'
-        # )
         BotCommand(
             command='/bomb',
             description='мини игра где надо угадать один из проводков'
-        ),
+        )
     ]
-    await bot.set_my_commands(commands, scope=BotCommandScopeAllGroupChats())
+    await bot.set_my_commands(commands, scope=BotCommandScopeDefault()) #юзать именно этот метод, для отображения для всех

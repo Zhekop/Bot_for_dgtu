@@ -3,12 +3,22 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 select_universiti = InlineKeyboardMarkup(inline_keyboard=[
     [
         InlineKeyboardButton(
-            text="Домашка",
-            callback_data='homework'
+            text="Покажи домашку",
+            callback_data='show_homework'
         ),
         InlineKeyboardButton(
-            text='Лекция',
-            callback_data='lecture_show'
+            text='Покажи лекцию',
+            callback_data='show_lecture'
+        )
+    ],
+    [
+        InlineKeyboardButton(
+            text="Записать домашку",
+            callback_data='make_homework'
+        ),
+        InlineKeyboardButton(
+            text='Записать лекцию',
+            callback_data='make_lecture'
         )
     ],
     [
