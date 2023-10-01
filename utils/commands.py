@@ -16,4 +16,4 @@ async def set_commands(bot:Bot):
             description='мини игра где надо угадать один из проводков'
         )
     ]
-    await bot.set_my_commands(commands, scope=BotCommandScopeDefault()) #юзать именно этот метод, для отображения для всех
+    await bot.set_my_commands(commands, scope=BotCommandScopeDefault()) #юзать именно этот метод, для отображения для всех пользвателей
