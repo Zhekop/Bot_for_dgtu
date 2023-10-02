@@ -9,6 +9,6 @@ router_inline = Router()
 @router_inline.message(Command('unic', 'unic'+last_com))
 async def get_kb_inline_universiti(message: Message):
     await message.answer(
-                        text='выбирай друже', 
-                        reply_markup=select_universiti
-                        )
+        text='выбирай друже', 
+        reply_markup=select_universiti
+        )

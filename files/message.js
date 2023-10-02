@@ -11,7 +11,8 @@ join_by_request=None, description=None, invite_link=None, pinned_message=None,
 permissions=None, slow_mode_delay=None, message_auto_delete_time=None, 
 has_aggressive_anti_spam_enabled=None, has_hidden_members=None, has_protected_content=None, 
 sticker_set_name=None, can_set_sticker_set=None, linked_chat_id=None, location=None, 
-all_members_are_administrators=True) 
+all_members_are_administrators=True)
+ 
 message_thread_id=None 
 
 from_user=User(id=1016825585, 
@@ -35,8 +36,10 @@ has_protected_content=None
 media_group_id=None 
 author_signature=None 
 text='/info' 
+
 entities=[MessageEntity(type='bot_command', offset=0, length=5, url=None, user=None, 
 language=None, custom_emoji_id=None)] 
+
 animation=None 
 audio=None 
 document=None 

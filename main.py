@@ -1,8 +1,9 @@
 from asyncio import run
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from aiogram import F
-from files.vars import dp, bot, now_time, hello
+from files.vars import dp, bot, now_time, good_morning, good_night
 from app.handler_inline_unic import router_inline
+from app.handler_inline_bomb import router_bomb
 from app.handler_info import router_info
 from app.handler_for_artem import artem
 from utils.commands import set_commands
@@ -12,6 +13,7 @@ from utils.commands import set_commands
 async def main():
     dp.include_router(router=router_info)
     dp.include_router(router=router_inline)
+    dp.include_router(router=router_bomb)
     dp.callback_query.register(artem, F.data.startswith('artem'))
 
     scheduler = AsyncIOScheduler(timezone="Europe/Moscow")
@@ -23,7 +25,9 @@ async def main():
     # scheduler.add_job(send_message_interval, trigger='interval',  days=1, kwargs={'bot': bot})
 
     '''каждый день в указанное время'''
-    scheduler.add_job(func=hello, trigger='cron', hour=15, minute=48, kwargs={'bot': bot})
+    scheduler.add_job(func=good_morning, trigger='cron', hour=7, kwargs={'bot': bot})
+    scheduler.add_job(func=good_night, trigger='cron', hour=0, kwargs={'bot': bot})
+
 
     scheduler.start()
     await set_commands(bot)

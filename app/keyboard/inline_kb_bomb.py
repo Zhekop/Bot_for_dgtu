@@ -1,6 +1,6 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-select_universiti = InlineKeyboardMarkup(inline_keyboard=[
+select_bomb = InlineKeyboardMarkup(inline_keyboard=[
     [
         InlineKeyboardButton(
             text='1',

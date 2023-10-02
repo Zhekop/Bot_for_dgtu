@@ -15,7 +15,7 @@ dp = Dispatcher()
 now_time = strftime("%H:%M")  # время (NOW)
 last_com = "@dgtu_yp11_bot"
 Artem_ID = 998839766
-Chat_Id = -4068562450
+Chat_Id_YP11 = -4068562450
 
 answers = [
     ', ты не Артем((((',
@@ -29,5 +29,8 @@ def answer_for_artem(first_name, last_name):
     answer = answers[num]
     return f'{first_name} {last_name}{answer}'
 
-async def hello(bot: Bot):
-    await bot.send_message(Chat_Id, text = "доброе утро моя стая!!")
+async def good_morning(bot: Bot):
+    await bot.send_message(Chat_Id_YP11, text = "Доброе утро моя стая!!")
+
+async def good_night(bot: Bot):
+    await bot.send_message(Chat_Id_YP11, text='Спокойной ночи моя стая!!')
