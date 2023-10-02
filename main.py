@@ -2,10 +2,9 @@ from asyncio import run
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from aiogram import F
 from files.vars import dp, bot, now_time, good_morning, good_night
-from app.handler_inline_unic import router_inline
-from app.handler_inline_bomb import router_bomb
-from app.handler_info import router_info
-from app.handler_for_artem import artem
+from app.handler_inline_unic import router_inline, artem
+from app.handler_inline_bomb import router_bomb, bomb
+from app.handler_info import router_info 
 from utils.commands import set_commands
 '''разница во времени 3 часа'''
 
@@ -15,6 +14,8 @@ async def main():
     dp.include_router(router=router_inline)
     dp.include_router(router=router_bomb)
     dp.callback_query.register(artem, F.data.startswith('artem'))
+    dp.callback_query.register(bomb, F.data.startswith('call'))
+
 
     scheduler = AsyncIOScheduler(timezone="Europe/Moscow")
 
