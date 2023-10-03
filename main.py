@@ -3,8 +3,9 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from aiogram import F
 from files.vars import dp, bot, now_time, good_morning, good_night
 from app.handler_inline_unic import router_inline, artem
-from app.handler_inline_bomb import router_bomb, bomb
+from app.handler_inline_bomb import router_bomb
 from app.handler_info import router_info 
+from app.test import router_test
 from utils.commands import set_commands
 '''разница во времени 3 часа'''
 
@@ -12,10 +13,10 @@ from utils.commands import set_commands
 async def main():
     dp.include_router(router=router_info)
     dp.include_router(router=router_inline)
-    dp.include_router(router=router_bomb)
+    # dp.include_router(router=router_bomb)
+    dp.include_router(router=router_test)
     dp.callback_query.register(artem, F.data.startswith('artem'))
-    dp.callback_query.register(bomb, F.data.startswith('call'))
-
+    # dp.callback_query.register(bomb, F.data.startswith('call'))
 
     scheduler = AsyncIOScheduler(timezone="Europe/Moscow")
 
@@ -27,11 +28,11 @@ async def main():
 
     '''каждый день в указанное время'''
     scheduler.add_job(func=good_morning, trigger='cron', hour=7, kwargs={'bot': bot})
-    scheduler.add_job(func=good_night, trigger='cron', hour=0, kwargs={'bot': bot})
+    scheduler.add_job(func=good_night, trigger='cron', hour=2, minute=38, kwargs={'bot': bot})
 
 
     scheduler.start()
-    await set_commands(bot)
+    #await set_commands(bot)
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 

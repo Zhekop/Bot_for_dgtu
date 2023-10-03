@@ -2,7 +2,7 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message, CallbackQuery
 from app.keyboard.Inline_kb_unic import select_universiti
-from files.vars import last_com, Artem_ID, answer_for_artem, bot
+from files.vars import last_com, Artem_ID, answer_for_artem
 
 router_inline = Router()
 

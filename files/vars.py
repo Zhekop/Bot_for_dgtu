@@ -16,6 +16,24 @@ now_time = strftime("%H:%M")  # время (NOW)
 last_com = "@dgtu_yp11_bot"
 Artem_ID = 998839766
 Chat_Id_YP11 = -4068562450
+Test_chat_id = -1001841963988
+
+Users_of_grope = [
+    "BlavikienButcheR",
+    "Лев",
+    "Garry6789",
+    "Uberhaise",
+    "Alex27egorova",
+    "Алина",
+    "negrilapidrila",
+    "Александр",
+    "SizkoIlya",
+    "Римма",
+    "Mr_ki11a",
+    "C_Nemo_SR",
+]
+
+
 
 answers = [
     ', ты не Артем((((',
@@ -33,4 +51,4 @@ async def good_morning(bot: Bot):
     await bot.send_message(Chat_Id_YP11, text = "Доброе утро моя стая!!")
 
 async def good_night(bot: Bot):
-    await bot.send_message(Chat_Id_YP11, text='Спокойной ночи моя стая!!')
+    await bot.send_message(Chat_Id_YP11, text = 'Спокойной ночи Артемчик, учись хорошшо и не прогуливай!!')
