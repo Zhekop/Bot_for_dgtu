@@ -15,7 +15,7 @@ dp = Dispatcher()
 now_time = strftime("%H:%M")  # время (NOW)
 last_com = "@dgtu_yp11_bot"
 Artem_ID = 998839766
-Chat_Id_YP11 = -4068562450
+Chat_Id_YP11 = -1001941143204
 Test_chat_id = -1001841963988
 
 Users_of_grope = [
@@ -31,9 +31,8 @@ Users_of_grope = [
     "Римма",
     "Mr_ki11a",
     "C_Nemo_SR",
+    "Sardina_1",
 ]
-
-
 
 answers = [
     ', ты не Артем((((',
@@ -52,3 +51,13 @@ async def good_morning(bot: Bot):
 
 async def good_night(bot: Bot):
     await bot.send_message(Chat_Id_YP11, text = 'Спокойной ночи Артемчик, учись хорошшо и не прогуливай!!')
+
+async def get_schedule() -> list:
+    schedule=''
+    result=''
+    for i in schedule:
+        result += f'{i}\n'
+    return result
+
+async def pidoras(bot:Bot) -> None:
+    await bot.send_message(Chat_Id_YP11, text=get_schedule)
