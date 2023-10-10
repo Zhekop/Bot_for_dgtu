@@ -1,15 +1,15 @@
-import requests
-from bs4 import BeautifulSoup
+# import requests
+# from bs4 import BeautifulSoup
 
-url = "https://edu.donstu.ru/WebApp/#/Rasp/Group/50918'"  # Замените на URL вашего сайта
-response = requests.get(url)
+# url = "https://edu.donstu.ru/WebApp/#/Rasp/Group/50918'"  # Замените на URL вашего сайта
+# response = requests.get(url)
 
-if response.status_code == 200:
-    html = response.text
-    print(response.text)
+# if response.status_code == 200:
+#     html = response.text
+#     print(response.text)
 
-else:
-    print('Ошибка при загрузке страницы')
+# else:
+#     print('Ошибка при загрузке страницы')
 
 
 # soup = BeautifulSoup(html, 'html.parser')
