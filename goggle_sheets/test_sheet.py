@@ -1,7 +1,5 @@
 from gspread import Client, Spreadsheet, Worksheet, service_account
-
-
-SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1wo5WAXwuooCooOPMYcFXkN0MrvGPcAiasYtWlX9Pa9A/edit#gid=0"
+from files.vars import gc, sh
 
 
 def all_workseets(sh: Spreadsheet):
@@ -22,8 +20,6 @@ def append(sh: Spreadsheet):
             main_wh.delete_row(i,)
         i += 1
 def main():
-    gc: Client = service_account("./files/.service_account.json")
-    sh: Spreadsheet = gc.open_by_url(SPREADSHEET_URL)
     # print(sh)
     # all_workseets(sh)
     append(sh)

@@ -1,16 +1,16 @@
-# from aiogram import F, Router
-# from aiogram.filters import Command
-# from aiogram.types import Message
-# from files.vars import bot, Chat_Id_YP11, last_com
+from aiogram import Router, F
+from aiogram.types import Message
 
-# router_test = Router()
+router_test = Router()
 
-# @router_test.message(Command('test', 'test'+last_com))
-# async def test(message: Message):
-#     if (message.from_user.first_name not in Users_of_grope) and (message.from_user.username not in Users_of_grope):
-#         if message.from_user.username == None:
-#             print(f'"{message.from_user.first_name}",')
-#         else:
-#             print(f'"{message.from_user.username}",')
-#     else:
-#         pass
+@router_test.message(F.photo)
+async def send_caption(message: Message):
+    photos = message.photo[-1].file_id
+    for photo in photos:
+        await message.answer(text=photo)    
+    # list_a = [message.photo[-1].file_id]
+    # strng = ''
+    # for i in list_a:
+    #     strng = strng + i + '\n'
+    # print(strng)
+    # await message.answer(strng)

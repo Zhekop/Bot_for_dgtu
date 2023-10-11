@@ -31,21 +31,15 @@ answers = {
     ', ты же не артем, зачем ты сюда нажимаешь?',
     ', ладно'
 }
-homeworks = {
-    "math",
-    "history",
-    "english",
-    "informatic",
-    "Chemistry"
-}
 
-def index_homework(msg:str) -> int:
+
+def index_homework(msg:str) -> list:
     match msg:
-        case 'мат'  : return 0
-        case 'ист'  : return 1
-        case 'анг'  : return 2
-        case 'итк'  : return 3
-        case 'хим'  : return 4
+        case msg if 'мат' in msg : return ["math", "мат"]
+        case msg if 'ист' in msg : return ["history", "ист"]
+        case msg if 'анг' in msg : return ["english", "анг"]
+        case msg if 'инф' in msg : return ["informatic", "инф"]
+        case msg if 'хим' in msg : return ["chemistry", "хим"]
 
 def answer_for_artem(first_name, last_name) -> str:
     num = randint(0, 3)
@@ -69,6 +63,3 @@ class Input_Homework:
         self.subject: str = subject
         self.list_img: list = list_img
         self.bot = bot
-
-    async def enter_hw(self, id:int, text:str):
-        await bot.send_message(chat_id=id, text=text)
