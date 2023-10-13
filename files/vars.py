@@ -20,6 +20,8 @@ now_time = strftime("%H:%M")  # время (NOW)
 
 last_com = "@dgtu_yp11_bot"
 
+akim_photo_id_yes = 'AgACAgIAAx0Cc7N-pAACAptlKQ_UwpBLIs7nNdeTZh2qJsetGgACcswxG3qHSEnAmu4lkxmLSAEAAwIAA3kAAzAE'
+akim_photo_id_no = 'AgACAgIAAx0Cc7N-pAACAq1lKRMl5eAz-u20VXQkgkuQdDa7QwACbdExG4IESEmFqvSzHERAnQEAAwIAA3kAAzAE'
 Artem_ID = 998839766
 admin_id = 1016825585   
 Chat_Id_YP11 = -1001941143204

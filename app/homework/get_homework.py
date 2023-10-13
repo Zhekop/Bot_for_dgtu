@@ -23,12 +23,8 @@ async def get_homework(message: Message):
     date = message.text.replace(subj[1], '').replace(' ', '')
     wh_name = f'hw_{subj[0]}'
     worksheet = sh.worksheet(wh_name)
-    data_for_wh = [date,]
+    data_for_wh = [date, ]
     add_homework(wh=worksheet, list_wh=data_for_wh)
-
-
-
-
     
 '''Доделать функцию'''
 
