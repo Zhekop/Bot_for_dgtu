@@ -20,6 +20,8 @@ now_time = strftime("%H:%M")  # время (NOW)
 
 last_com = "@dgtu_yp11_bot"
 
+akim_photo_id_yes = 'AgACAgIAAx0Cc7N-pAACAptlKQ_UwpBLIs7nNdeTZh2qJsetGgACcswxG3qHSEnAmu4lkxmLSAEAAwIAA3kAAzAE'
+akim_photo_id_no = 'AgACAgIAAx0Cc7N-pAACAq1lKRMl5eAz-u20VXQkgkuQdDa7QwACbdExG4IESEmFqvSzHERAnQEAAwIAA3kAAzAE'
 Artem_ID = 998839766
 admin_id = 1016825585   
 Chat_Id_YP11 = -1001941143204
@@ -31,21 +33,15 @@ answers = {
     ', ты же не артем, зачем ты сюда нажимаешь?',
     ', ладно'
 }
-homeworks = {
-    "math",
-    "history",
-    "english",
-    "informatic",
-    "Chemistry"
-}
 
-def index_homework(msg:str) -> int:
+
+def index_homework(msg:str) -> list:
     match msg:
-        case 'мат'  : return 0
-        case 'ист'  : return 1
-        case 'анг'  : return 2
-        case 'итк'  : return 3
-        case 'хим'  : return 4
+        case msg if 'мат' in msg : return ["math", "мат"]
+        case msg if 'ист' in msg : return ["history", "ист"]
+        case msg if 'анг' in msg : return ["english", "анг"]
+        case msg if 'инф' in msg : return ["informatic", "инф"]
+        case msg if 'хим' in msg : return ["chemistry", "хим"]
 
 def answer_for_artem(first_name, last_name) -> str:
     num = randint(0, 3)
@@ -61,3 +57,14 @@ async def good_night(bot: Bot) -> None:
 
 async def get_photo(message: Message) -> None:
     await message.answer(message.photo[-1].file_id)
+
+
+class Input_Homework:
+    def __init__(self, date:str, subject:str, list_img:list, bot:Bot = bot) -> None:
+        self.date: str = date
+        self.subject: str = subject
+        self.list_img: list = list_img
+        self.bot = bot
+
+    async def enter_hw(self, id:int, text:str):
+        await bot.send_message(chat_id=id, text=text)
