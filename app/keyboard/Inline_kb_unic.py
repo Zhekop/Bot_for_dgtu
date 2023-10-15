@@ -13,16 +13,6 @@ select_universiti = InlineKeyboardMarkup(inline_keyboard=[
     ],
     [
         InlineKeyboardButton(
-            text="Записать домашку",
-            callback_data='make_homework'
-        ),
-        InlineKeyboardButton(
-            text='Записать лекцию',
-            callback_data='make_lecture'
-        )
-    ],
-    [
-        InlineKeyboardButton(
             text='артем, нажми',
             callback_data='artem'
         )
