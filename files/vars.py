@@ -57,14 +57,3 @@ async def good_night(bot: Bot) -> None:
 
 async def get_photo(message: Message) -> None:
     await message.answer(message.photo[-1].file_id)
-
-
-class Input_Homework:
-    def __init__(self, date:str, subject:str, list_img:list, bot:Bot = bot) -> None:
-        self.date: str = date
-        self.subject: str = subject
-        self.list_img: list = list_img
-        self.bot = bot
-
-    async def enter_hw(self, id:int, text:str):
-        await bot.send_message(chat_id=id, text=text)
