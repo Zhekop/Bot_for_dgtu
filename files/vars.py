@@ -1,12 +1,13 @@
 from time import strftime
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
-# from aiogram.client.session.aiohttp import AiohttpSession
+from aiogram.client.session.aiohttp import AiohttpSession
 from gspread import Client, service_account, Spreadsheet
 from random import randint
 
 SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1wo5WAXwuooCooOPMYcFXkN0MrvGPcAiasYtWlX9Pa9A/edit#gid=0"
-gc: Client = service_account("./files/.service_account.json")   #Подключение к акку который может редачить табицу
+gc: Client = service_account("./Bot_for_dgtu/files/.service_account.json")   #Подключение к акку который может редачить табицу
+# gc: Client = service_account("/.service_account.json")                     #Подключение к акку который может редачить табицу
 sh: Spreadsheet = gc.open_by_url(SPREADSHEET_URL)               #Объект файла
 
 TOKEN_API = '6175431771:AAHZt3Wk6BZCxWwB6V_n62wP0K89xhV2Kfg'
@@ -57,11 +58,3 @@ async def good_night(bot: Bot) -> None:
 
 async def get_photo(message: Message) -> None:
     await message.answer(message.photo[-1].file_id)
-
-
-class Input_Homework:
-    def __init__(self, date:str, subject:str, list_img:list, bot:Bot = bot) -> None:
-        self.date: str = date
-        self.subject: str = subject
-        self.list_img: list = list_img
-        self.bot = bot
