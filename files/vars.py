@@ -6,7 +6,8 @@ from gspread import Client, service_account, Spreadsheet
 from random import randint
 
 SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1wo5WAXwuooCooOPMYcFXkN0MrvGPcAiasYtWlX9Pa9A/edit#gid=0"
-gc: Client = service_account("./files/.service_account.json")   #Подключение к акку который может редачить табицу
+gc: Client = service_account("./Bot_for_dgtu/files/.service_account.json")   #Подключение к акку который может редачить табицу
+# gc: Client = service_account("/.service_account.json")                     #Подключение к акку который может редачить табицу
 sh: Spreadsheet = gc.open_by_url(SPREADSHEET_URL)               #Объект файла
 
 TOKEN_API = '6175431771:AAHZt3Wk6BZCxWwB6V_n62wP0K89xhV2Kfg'
