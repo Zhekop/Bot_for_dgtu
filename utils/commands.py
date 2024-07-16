@@ -5,7 +5,7 @@ async def set_commands(bot:Bot):
     commands = [
         BotCommand(
             command='/unic',
-            description='все что связано с универом'
+            description='все что связано c универом'
         ),
         BotCommand(
             command='/all',

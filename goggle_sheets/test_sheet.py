@@ -1,5 +1,5 @@
 from gspread import Client, Spreadsheet, Worksheet, service_account
-from files.vars import gc, sh
+from Bot_for_dgtu.files.vars import gc, sh
 
 
 def all_workseets(sh: Spreadsheet):
@@ -19,10 +19,16 @@ def append(sh: Spreadsheet):
         if u[0] == '':
             main_wh.delete_row(i,)
         i += 1
+
+def show(sh:Spreadsheet):
+    wh = sh.worksheet('DGTU_Users')
+    val = wh.get_all_values()
+    print(val)
+    for i in val:
+        print(i)
+
 def main():
-    # print(sh)
-    # all_workseets(sh)
-    append(sh)
+    show(sh)
 
 
 if __name__ == '__main__':

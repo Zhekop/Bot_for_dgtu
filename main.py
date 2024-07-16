@@ -6,7 +6,7 @@ from app.handler_inline_unic import router_inline, artem
 from app.handler_inline_bomb import router_bomb, bomb
 from app.handler_info import router_info 
 # from app.test import router_test
-# from app.handler_all import router_all
+from app.handler_all import router_all
 from app.no_command import router_no_command
 from utils.commands import set_commands
 '''разница во времени 3 часа'''
@@ -17,7 +17,7 @@ async def main():
     dp.include_router(router=router_info)       #возвращает некую информацию
     dp.include_router(router=router_bomb)       #возвращает мини-игру
     # dp.include_router(router=router_test)       #тестовая функция 
-    # dp.include_router(router=router_all)
+    dp.include_router(router=router_all)
     dp.include_router(router=router_no_command)
     dp.callback_query.register(artem, F.data.startswith('artem'))
     dp.callback_query.register(bomb, F.data.startswith('call'))

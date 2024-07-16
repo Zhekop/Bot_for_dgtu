@@ -5,7 +5,7 @@ from aiogram.types import Message
 from aiogram import F
 
 def add_homework(wh: Worksheet, list_hw: list):  #заполняет таблицу так    
-    all_rows = wh.get_all_values()                          #Таблица с которой идет работа (все ее значения)
+    all_rows = wh.get_all_values()               #Таблица с которой идет работа (все ее значения)
     index = 1
     for items in all_rows:
         if items[0] == '':
@@ -14,7 +14,7 @@ def add_homework(wh: Worksheet, list_hw: list):  #заполняет табли�
         index += 1
     else:
         wh.append_row()
-
+    
 router_get_hw = Router()
 
 @router_get_hw.message(F.photo)
