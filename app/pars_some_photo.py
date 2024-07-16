@@ -1,9 +1,9 @@
 from files.vars import dp
-from aiogram import types, Router
+from aiogram import types, Router, F
 
 router_get_photo = Router()
 
-@dp.message_handler(content_types=types.ContentTypes.PHOTO)
+@dp.message_handler(F.photo)
 async def handle_photos(message: types.Message):
     # Получаем ID фотографий
     photo_ids = [photo.file_id for photo in message.photo]

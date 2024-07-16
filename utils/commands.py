@@ -15,5 +15,9 @@ async def set_commands(bot:Bot):
             command='/bomb',
             description='мини игра где надо угадать один из проводков'
         ),
+        BotCommand(
+            command='/admin',
+            description='Админ панель для добавления/редактирования/удаления чего либо'
+        )
     ]
     await bot.set_my_commands(commands, scope=BotCommandScopeDefault()) #юзать именно этот метод, для отображения для всех пользвателей
